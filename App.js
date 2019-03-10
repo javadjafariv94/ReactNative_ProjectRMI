@@ -1,6 +1,8 @@
 import React from 'react';
 import {View , Text ,Button} from 'react-native';
 import Filter from './Filter';
+import Album from './component/album/album';
+
 import { createStackNavigator, createAppContainer } from "react-navigation";
 class HomeScreen extends React.Component {
 
@@ -26,6 +28,23 @@ class HomeScreen extends React.Component {
             this.props.navigation.navigate('Details')
           }}
         />
+        
+        <Button
+          title="Go to News"
+          onPress={() => {
+            this.props.navigation.navigate('Filter')
+          }}
+        />
+
+         <Button
+          title="Go to Album"
+          onPress={() => {
+            this.props.navigation.navigate('Album')
+          }}
+        /> 
+
+
+
 
       </View> 
     ) 
@@ -81,7 +100,9 @@ const AppNavigator = createStackNavigator(
   {
     Home :    { screen : HomeScreen},
     Details : { screen : DetialScreen},
-    
+    Filter :  { screen : Filter},
+    Album :   { screen : Album}
+
   },
   {
     initialRouteName : 'Home'

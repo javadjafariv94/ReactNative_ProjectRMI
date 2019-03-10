@@ -13,6 +13,17 @@ export default class Filter extends Component {
     keyEnter : '',
     keyEnter2: ''
   }
+  static navigationOptions = {
+    title : 'News with filter',
+    headerStyle :{
+      backgroundColor : 'blue',
+    },
+    headerTintColor : '#fff',
+    headerTitleStyle :{
+      fontWeight :'bold',
+    },
+  };
+
 
   getkeyword = (event) => {
     this.state.keyEnter = event;
