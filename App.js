@@ -1,8 +1,20 @@
 import React from 'react';
 import {View , Text ,Button} from 'react-native';
 import Filter from './Filter';
-import { createStackNavigator, createAppContainer ,StackActions ,NavigationActions} from "react-navigation";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 class HomeScreen extends React.Component {
+
+  static navigationOptions = {
+    title : 'Home',
+    headerStyle :{
+      backgroundColor : '#f4511e',
+    },
+    headerTintColor : '#fff',
+    headerTitleStyle :{
+      fontWeight :'bold',
+    },
+  };
+
   render(){
     return(
      <View style = {{flex : 1, alignItems :'center' ,justifyContent :'center'}} >
@@ -11,12 +23,7 @@ class HomeScreen extends React.Component {
        <Button
           title="Go to Details"
           onPress={() => {
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'Details' })
-              ],
-            }))
+            this.props.navigation.navigate('Details')
           }}
         />
 
@@ -26,10 +33,44 @@ class HomeScreen extends React.Component {
 }
 
 class DetialScreen extends React.Component {
+  static navigationOptions = {
+    title : 'Details',
+    headerStyle :{
+      backgroundColor : 'blue',
+    },
+    headerTintColor : '#fff',
+    headerTitleStyle :{
+      fontWeight :'bold',
+    },
+  };
+
   render(){
     return(
      <View style = {{flex : 1, alignItems :'center' ,justifyContent :'center'}} >
        <Text> DetailScreen </Text>
+       <Text>Details 1 </Text>
+        <Text>Details 2 </Text>
+        <Text>Details 3 </Text>
+        <Text>Details 4 </Text>
+
+        <Button
+         title ="Go To details .... again"
+         onPress={() => 
+           this.props.navigation.push('Details')
+         }
+        />
+
+        <Button
+          title = "Go to Home"
+          onPress ={() =>
+            this.props.navigation.navigate('Home')}
+         />
+
+         <Button 
+         title = "Go back"
+         onPress= { () => this.props.navigation.goBack()} 
+         />   
+
      </View> 
     ) 
   }
@@ -39,11 +80,18 @@ class DetialScreen extends React.Component {
 const AppNavigator = createStackNavigator(
   {
     Home :    { screen : HomeScreen},
-    Details : { screen : DetialScreen}
+    Details : { screen : DetialScreen},
+    
   },
   {
     initialRouteName : 'Home'
   }
 );
 
-export default createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class  App extends React.Component{
+  render(){
+    return <AppContainer />
+  }
+}
