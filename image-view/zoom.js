@@ -49,13 +49,12 @@ export default class Zoom extends React.Component {
 
     render(){
         return(
-        <View> 
-            <Text>zoom</Text>
-            <Modal visible={true} transparent={true}>
+                
+            //<Modal visible={true} transparent={true}>
                 <ImageViewer imageUrls={articles}/>
-           </Modal>
+           //</Modal>
 
-        </View>
+        
         )
     }
 }

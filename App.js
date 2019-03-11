@@ -25,54 +25,71 @@ class HomeScreen extends React.Component {
      <View style = {{flex : 1, alignItems :'center' ,justifyContent :'center'}} >
        <Text> WellCome To My Project </Text>
 
+
+       <View style={{margin :20 ,width :300}} >
+
+
        <Button
           title="Go to Details"
           onPress={() => {
             this.props.navigation.navigate('Details')
           }}
         />
-        
-        <Button
+
+
+        <View style={{margin :20}} >
+        <Button 
           title="Go to News"
           onPress={() => {
             this.props.navigation.navigate('Filter')
           }}
         />
+        </View>
+
 
          <Button
           title="Go to Album"
+          color="#841584"
           onPress={() => {
             this.props.navigation.navigate('Album')
           }}
         /> 
 
+        <View style={{margin :20}} >
         <Button
           title="Go to New Album"
           onPress={() => {
             this.props.navigation.navigate('NewAlbum')
           }}
         /> 
+        </View>
 
-       <Button
-          title="Go to New Album Zoom"
-          onPress={() => {
-            this.props.navigation.navigate('Zoom')
+
+         
+          <Button 
+             title="Go to New Album Zoom"
+             onPress={() => {
+             this.props.navigation.navigate('Zoom')
           }}
-        /> 
-        <Button
+          /> 
+       
+
+        {/* <Button
           title="Modal"
           onPress={() => {
             this.props.navigation.navigate('ModalExample')
           }}
-        /> 
-
+        />  */}
+        <View style={{margin :20}}>
         <Button
           title="Pan"
           onPress={() => {
             this.props.navigation.navigate('Pan')
           }}
         /> 
+        </View>
 
+         </View>
       </View> 
     ) 
   }
@@ -129,9 +146,8 @@ const AppNavigator = createStackNavigator(
     Details : { screen : DetialScreen},
     Filter :  { screen : Filter},
     Album :   { screen : Album},
-  //  NewAlbum :{ screen : NewAlbum}
     Zoom :    { screen : Zoom},
-    ModalExample :   {screen : ModalExample},
+    //ModalExample :   {screen : ModalExample},
     Pan :{screen : Pan}
 
   },

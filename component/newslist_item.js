@@ -18,7 +18,11 @@ const PrintNews = (props) => {
               </View>
             ) 
           }
+          
+
         }    
+          keyExtractor={(index) => index}
+
         />)
 
 }
