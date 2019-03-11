@@ -10,9 +10,11 @@ renderFlatlistArticle  (article) {
   return <Article image={article.imageUrl} title={article.title} body={article.body} />
   
 }
-
+  
 
   render(){
+    console.log("okey");
+    //alert("wellcome");
     return (
        <View style={{backgroundColor : '#dbf4e1'}}>
          <FlatList             

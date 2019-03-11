@@ -1,15 +1,24 @@
 import React from 'react';
-import {View , Text , Image , StyleSheet} from 'react-native';
+import {View , Text , Image , StyleSheet ,TouchableOpacity} from 'react-native';
+
 
 export default class Article extends React.Component {
+
+pressPicture =() =>{
+  alert("Pressed picture");
+  
+}
 
     render(){
       const { title , image ,body} =this.props;
       //const { image , title , body} = this.props;
       return (
           <View style={styles.container}>
-              <Image source={image}  style={styles.image} />
-
+            <TouchableOpacity onPress={this.pressPicture}>        
+              <Image source={image}  style={styles.image} 
+                
+              />
+          </TouchableOpacity>
               <View style={{ padding : 10}}>
                     <Text style={styles.title}>{title}</Text>
                     <Text style={styles.body}>{body}</Text>
@@ -34,10 +43,15 @@ const styles = StyleSheet.create({
     shadowOffset : { width : 0 , height: 20},
     shadowOpacity : .2,
   },
-    image :{
-      width :'100%',
-      height :120
-    },
+    
+  image :{
+    width :'100%',
+    height :120
+  },
+  imageZoom :{
+    width :'100%',
+    height :'100%'
+  },
     title : {
       fontSize : 18,
   },
