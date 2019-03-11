@@ -82,8 +82,8 @@ export default  class Album extends React.Component {
               body :'Discription 12' 
               },
           {
-              title : 'laravel3',
-              imageUrl : { uri : 'https://roocket.ir/public/image/2017/6/13/cms-laravel-cover-1.jpg'},
+              title : 'Teacher',
+              imageUrl : { uri : 'http://v1.qzone.cc/avatar/201407/07/00/24/53b9782c444ca987.jpg!200x200.jpg'},
               body :'Discription 10'
           },
             

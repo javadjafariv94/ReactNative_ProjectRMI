@@ -1,6 +1,6 @@
 import React from 'react';
-import {View , Text , Image , StyleSheet ,TouchableOpacity} from 'react-native';
-
+import {View , Text , Image , StyleSheet ,TouchableOpacity,Dimensions} from 'react-native';
+import ImageZoom from 'react-native-image-pan-zoom'; 
 
 export default class Article extends React.Component {
 
@@ -14,11 +14,32 @@ pressPicture =() =>{
       //const { image , title , body} = this.props;
       return (
           <View style={styles.container}>
-            <TouchableOpacity onPress={this.pressPicture}>        
+            {/* <TouchableOpacity onPress={this.pressPicture}> 
+
+
               <Image source={image}  style={styles.image} 
                 
               />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+
+          
+            {/* <ImageZoom cropWidth={Dimensions.get('window').width}
+                       cropHeight={Dimensions.get('window').height}
+                       imageWidth={200}
+                       imageHeight={200}> */}
+
+
+           <ImageZoom cropWidth={180}
+                       cropHeight={180}
+
+                       imageWidth={180}
+                       imageHeight={180}>
+
+                      
+                <Image style={styles.image}
+                       source={image}/>
+            </ImageZoom>
+
               <View style={{ padding : 10}}>
                     <Text style={styles.title}>{title}</Text>
                     <Text style={styles.body}>{body}</Text>
