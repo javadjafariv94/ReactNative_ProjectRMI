@@ -5,6 +5,8 @@ import Album from './component/album/album';
 //import NewAlbum from './image-view/newAlbum';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Zoom from './image-view/zoom';
+import ModalExample from './image-view/modal';
+import Pan from './image-view/pan';
 class HomeScreen extends React.Component {
 
   static navigationOptions = {
@@ -55,6 +57,19 @@ class HomeScreen extends React.Component {
           title="Go to New Album Zoom"
           onPress={() => {
             this.props.navigation.navigate('Zoom')
+          }}
+        /> 
+        <Button
+          title="Modal"
+          onPress={() => {
+            this.props.navigation.navigate('ModalExample')
+          }}
+        /> 
+
+        <Button
+          title="Pan"
+          onPress={() => {
+            this.props.navigation.navigate('Pan')
           }}
         /> 
 
@@ -115,7 +130,9 @@ const AppNavigator = createStackNavigator(
     Filter :  { screen : Filter},
     Album :   { screen : Album},
   //  NewAlbum :{ screen : NewAlbum}
-    Zoom :    { screen : Zoom}
+    Zoom :    { screen : Zoom},
+    ModalExample :   {screen : ModalExample},
+    Pan :{screen : Pan}
 
   },
   {
