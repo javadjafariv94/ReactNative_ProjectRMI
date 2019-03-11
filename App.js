@@ -2,7 +2,7 @@ import React from 'react';
 import {View , Text ,Button} from 'react-native';
 import Filter from './Filter';
 import Album from './component/album/album';
-
+//import NewAlbum from './image-view/newAlbum';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 class HomeScreen extends React.Component {
 
@@ -43,8 +43,12 @@ class HomeScreen extends React.Component {
           }}
         /> 
 
-
-
+        <Button
+          title="Go to New Album"
+          onPress={() => {
+            this.props.navigation.navigate('NewAlbum')
+          }}
+        /> 
 
       </View> 
     ) 
@@ -101,7 +105,8 @@ const AppNavigator = createStackNavigator(
     Home :    { screen : HomeScreen},
     Details : { screen : DetialScreen},
     Filter :  { screen : Filter},
-    Album :   { screen : Album}
+    Album :   { screen : Album},
+  //  NewAlbum :{ screen : NewAlbum}
 
   },
   {
