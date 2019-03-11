@@ -5,7 +5,7 @@ import {View , Text , Image , StyleSheet ,TouchableOpacity} from 'react-native';
 export default class Article extends React.Component {
 
 pressPicture =() =>{
-  alert("Pressed picture");
+  alert(this.props.title);
   
 }
 
